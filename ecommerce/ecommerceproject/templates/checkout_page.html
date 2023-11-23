@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Checkout</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
 
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-check {
+            margin-top: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="totalAmount">Total amount</label>
+                <input type="text" readonly value="{{ total }}" class="form-control" id="totalAmount">
+            </div>
+            <h5>Card details</h5>
+            <div class="form-group">
+                <input type="text" class="form-control"  placeholder="Card holder name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Card Number">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control"  placeholder="Card Cvv">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="mx-auto">
+        <a href="{% url 'shop:allProdCat' %}" class="btn btn-secondary ">Continue Shopping</a>
+
+    </div>
+</div>
+</body>
+</html>
