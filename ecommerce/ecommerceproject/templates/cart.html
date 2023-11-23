@@ -110,6 +110,7 @@ Tis is the cart page . proceed to review your items and place the order
 
             </table>
             <div class="mx-auto">
+                <a href="{% url 'cart:checkout_page' total=total|floatformat:0 %}" class="btn btn-primary btn-block my_custom_button">Checkout</a>
                 <a href="{% url 'shop:allProdCat' %}" class="btn btn-secondary btn-block my_custom_button">Continue Shopping</a>
 
 </div>
