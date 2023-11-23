@@ -60,3 +60,6 @@ def full_remove(request,product_id):
     cart_item.delete()
     return redirect('cart:cart_detail')
 
+def checkout_page(request,total):
+    return render(request,'checkout_page.html',{'total':total})
+
